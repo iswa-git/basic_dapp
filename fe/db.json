@@ -1,12 +1,6 @@
 {
   "team": [
     {
-      "id": 1,
-      "title": "Developer",
-      "name": "Haytham",
-      "netad": ""
-    },
-    {
       "id": 2,
       "title": "Developer",
       "name": "Taha",
@@ -14,51 +8,51 @@
     },
     {
       "id": 3,
-      "title":"Developer",
-      "name":"Hesham",
-      "netad": ""
-    },
-    {
-      "id": 4,
-      "title":"Developer",
-      "name":"Ahmad",
+      "title": "Developer",
+      "name": "Hesham",
       "netad": ""
     },
     {
       "id": 5,
-      "title":"Developer",
-      "name":"Omar",
+      "title": "Developer",
+      "name": "Omar",
       "netad": ""
     },
     {
       "id": 6,
-      "title":"Developer",
-      "name":"Etaf",
+      "title": "Developer",
+      "name": "Etaf",
       "netad": ""
     },
     {
       "id": 7,
-      "title":"Developer",
-      "name":"Mohammad Ali",
+      "title": "Developer",
+      "name": "Mohammad Ali",
       "netad": ""
     },
     {
       "id": 8,
-      "title":"Developer",
-      "name":"Mohammad",
+      "title": "Developer",
+      "name": "Mohammad",
       "netad": "0x0A80816cde5C23a7f7e5C6a7B385A1B239C946C2"
     },
     {
       "id": 9,
-      "title":"Manager",
-      "name":"Raghid",
+      "title": "Manager",
+      "name": "Raghid",
       "netad": ""
     },
     {
       "id": 10,
-      "title":"Manager",
-      "name":"Devin",
+      "title": "Manager",
+      "name": "Devin",
       "netad": ""
+    },
+    {
+      "name": "Haytham",
+      "title": "Dev",
+      "netad": "",
+      "id": 11
     }
   ]
 }
