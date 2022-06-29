@@ -1,4 +1,4 @@
-import React, { Component} from 'react';
+import React from 'react';
 import { useState } from 'react';
 //import logo from './logo.svg';
 import './index.css';
@@ -6,6 +6,7 @@ import './index.css';
 //import Home from './components/Home';
 import Header from './components/Header';
 import Members from './components/tm';
+import AddMember from './components/AddMember'
 
 const App = () => {
     const [ members, setMember ] = useState ([
@@ -70,14 +71,18 @@ const App = () => {
           "netad": ""
         }
 ])
-
-// Delete Task
+// Add  Member
+const addMember = (member) => {
+  console.log (member)
+}
+// Delete Member
 const deleteMember = (id) => {
   setMember (members.filter((member) => member.id !== id))
 }
     return (
       <div className="container">
         <Header title="Dev Team" />
+        <AddMember onAdd={addMember}/>
         {members.length > 0 ? (
           <Members members={members} onDelete={deleteMember}/>
         ) : ( 'No Members')}
