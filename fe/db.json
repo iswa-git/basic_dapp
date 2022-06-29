@@ -1,0 +1,54 @@
+{
+  "team": [
+    {
+      "id": 1,
+      "title": "Developer",
+      "name": "Haytham"
+    },
+    {
+      "id": 2,
+      "title": "Developer",
+      "name": "Taha"
+    },
+    {
+      "id": 3,
+      "title":"Developer",
+      "name":"Hesham"
+    },
+    {
+      "id": 4,
+      "title":"Developer",
+      "name":"Ahmad"
+    },
+    {
+      "id": 5,
+      "title":"Developer",
+      "name":"Omar"
+    },
+    {
+      "id": 6,
+      "title":"Developer",
+      "name":"Etaf"
+    },
+    {
+      "id": 7,
+      "title":"Developer",
+      "name":"Mohammad Ali"
+    },
+    {
+      "id": 8,
+      "title":"Developer",
+      "name":"Mohammad"
+    },
+    {
+      "id": 9,
+      "title":"Manager",
+      "name":"Raghid"
+    },
+    {
+      "id": 10,
+      "title":"Manager",
+      "name":"Devin"
+    }
+  ]
+}

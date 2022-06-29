@@ -1,0 +1,9 @@
+
+{
+    "/team/list": "/team",
+    "/team/get/:id": "/team/:id",
+    "/team/create": "/team",
+    "/team/update/:id": "/team/:id",
+    "/team/delete/:id": "/team/:id"
+  }
+  
