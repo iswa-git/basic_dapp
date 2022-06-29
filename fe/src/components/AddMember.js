@@ -15,9 +15,11 @@ const AddMember = ( { onAdd}) => {
             return
         }
 
-        if (netad.length !== 42){
-            alert ('Token length should be 42, please check it!')
-            return
+        if (netad.length >0 ){
+            if (netad.length !== 42){
+                alert ('Token length should be 42, please check it!')
+                return
+            }
         }
 
         onAdd( {name, title, netad })
