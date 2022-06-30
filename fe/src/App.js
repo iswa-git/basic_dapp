@@ -23,50 +23,26 @@ const App = () => {
     getMembers()
   }, [])
 
-// Fetch Members
-const fetchMembers = async () => {
-  const res = await fetch('http://localhost:5000/team')
-  const data = await res.json()
+  // Fetch Members
+  const fetchMembers = async () => {
+    const res = await fetch('http://localhost:5000/team')
+    const data = await res.json()
 
-  return data
-}
+    return data
+  }
 
-
-  // Add Task
-  //const addTask = async (task) => {
-    // const res = await fetch('http://localhost:5000/tasks', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-type': 'application/json',
-    //   },
-    //   body: JSON.stringify(task),
-    // })
-
-    // const data = await res.json()
-
-    // setTasks([...tasks, data])
-
-    // const id = Math.floor(Math.random() * 10000) + 1
-    // const newTask = { id, ...task }
-    // setTasks([...tasks, newTask])
-  // }
-
-// Add  Member
-const addMember = async (member) => {
-  const res = await fetch('http://localhost:5000/team/', {
-    method: 'POST',
-    headers: {
-      'Content-type':'application/json'
-    },
-    body: JSON.stringify(member)
-  })
+  // Add  Member
+  const addMember = async (member) => {
+    const res = await fetch('http://localhost:5000/team/', {
+      method: 'POST',
+      headers: {
+        'Content-type':'application/json'
+      },
+      body: JSON.stringify(member)
+    })
 
   const data = await res.json()
-  setMember([...member, data])
-  // const id= Math.floor(Math.random() * 10000 )+ 1
-  // const newMember = {id, ...member}
-  
-  // setMember([...members, newMember])
+  setMember([...members, data])
 }
 
 // Delete Member
