@@ -6,6 +6,7 @@ const AddMember = ( { onAdd}) => {
     const [name, setName] = useState('');
     const [title, setTitle] = useState ('');
     const [netad, setNetAd] = useState ('');
+    const [email, setEmail] = useState ('');
     
     const onSubmit = (e) => {
         e.preventDefault()
@@ -22,11 +23,12 @@ const AddMember = ( { onAdd}) => {
             }
         }
 
-        onAdd( {name, title, netad })
+        onAdd( {name, title, email, netad })
 
         setName('')
         setTitle('')
         setNetAd('')
+        setEmail('')
     }
 
     
@@ -40,6 +42,11 @@ const AddMember = ( { onAdd}) => {
         <div className='form-control'>
             <label>Title</label>
             <input type='text' placeholder='Add Title' value={title} onChange={(e) => setTitle(e.target.value)}/>
+        </div>
+
+        <div className='form-control'>
+            <label>Email Address</label>
+            <input type='text' placeholder='Add Email Address' value={email} onChange={(e) => setEmail(e.target.value)}/>
         </div>
 
         <div className='form-control'>
