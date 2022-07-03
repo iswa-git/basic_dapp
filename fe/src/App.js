@@ -7,6 +7,7 @@ import './index.css';
 import Header from './components/Header';
 import Members from './components/tm';
 import AddMember from './components/AddMember'
+import EthTransfer from './components/EthTransfer';
 
 const App = () => {
   const [ showAddMember, setShowAddMember] = useState (false)
@@ -65,6 +66,7 @@ const deleteMember = async (id) => {
         {members.length > 0 ? (
           <Members members={members} onDelete={deleteMember}/>
         ) : ( 'No Members')}
+        <EthTransfer />
       </div>
     );
 };

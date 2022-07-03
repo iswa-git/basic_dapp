@@ -1,27 +1,6 @@
 {
   "team": [
     {
-      "id": 5,
-      "title": "Developer",
-      "name": "Omar",
-      "email": "",
-      "netad": ""
-    },
-    {
-      "id": 6,
-      "title": "Developer",
-      "name": "Etaf",
-      "email": "",
-      "netad": ""
-    },
-    {
-      "id": 7,
-      "title": "Developer",
-      "name": "Mohammad Ali",
-      "email": "",
-      "netad": ""
-    },
-    {
       "id": 8,
       "title": "Developer",
       "name": "Mohammad",
@@ -29,53 +8,11 @@
       "netad": "0x0A80816cde5C23a7f7e5C6a7B385A1B239C946C2"
     },
     {
-      "id": 9,
-      "title": "Manager",
-      "name": "Raghid",
+      "name": "Mohammad 2",
+      "title": "",
       "email": "",
-      "netad": ""
-    },
-    {
-      "id": 10,
-      "title": "Manager",
-      "name": "Devin",
-      "email": "",
-      "netad": ""
-    },
-    {
-      "name": "Haytham",
-      "title": "Dev",
-      "email": "",
-      "netad": "",
-      "id": 11
-    },
-    {
-      "name": "Hesham",
-      "title": "Developer",
-      "email": "",
-      "netad": "",
-      "id": 12
-    },
-    {
-      "name": "Taha",
-      "title": "Developer",
-      "email": "",
-      "netad": "",
-      "id": 13
-    },
-    {
-      "name": "Omar",
-      "title": "Developer",
-      "email": "",
-      "netad": "",
-      "id": 14
-    },
-    {
-      "name": "Shadi",
-      "title": "Student",
-      "email": "",
-      "netad": "",
-      "id": 15
+      "netad": "0x74D45a2C71330E771F0B15EEC54391dEEb0e9145",
+      "id": 9
     }
   ]
 }
