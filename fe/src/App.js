@@ -16,16 +16,16 @@ const App = () => {
 
   useEffect (()=> {
     const getMembers = async () => {
+      // eslint-disable-next-line 
       const membersFromServer = await fetchMembers()
       setMember(membersFromServer)
     }
-
     getMembers()
   }, [])
 
   // Fetch Members
   const fetchMembers = async () => {
-    const res = await fetch('http://localhost:5000/team')
+    const res = await fetch('http://192.168.125.127:5000/team/')
     const data = await res.json()
 
     return data
@@ -33,7 +33,7 @@ const App = () => {
 
   // Add  Member
   const addMember = async (member) => {
-    const res = await fetch('http://localhost:5000/team/', {
+    const res = await fetch('http://192.168.125.127:5000/team/', {
       method: 'POST',
       headers: {
         'Content-type':'application/json'
@@ -47,7 +47,7 @@ const App = () => {
 
 // Delete Member
 const deleteMember = async (id) => {
-  const res = await fetch (`http://localhost:5000/team/${id}`, {
+  const res = await fetch (`http://192.168.125.127:5000/team/${id}`, {
     method: 'DELETE',
   })
   console.log(res)
