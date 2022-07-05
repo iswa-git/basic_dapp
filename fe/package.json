@@ -17,5 +17,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "jsonsrv": "json-server --host localhost --watch db.json --port 5000"
+  },
+  "devDependencies": {
+    "hardhat": "^2.9.9"
   }
 }

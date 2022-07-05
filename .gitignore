@@ -5,4 +5,4 @@ fe/node_modules/.package-lock.json
 fe/node_modules/*
 be/node_modules/*
 fe/db.json
-
+fe/cache/*
