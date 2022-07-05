@@ -2,13 +2,13 @@ import React from 'react';
 
 import { FaTimes } from 'react-icons/fa'
 
-const Member = ({member, onDelete}) => {
+const Member = ({member, onDelete, onToggle}) => {
     let tokenaddress=member.netad ? member.netad : "Missing token address"
-    let emailaddress=member.email ? member.email : "Missing email provided"
-    let membertitle = member.title ? member.title : "Missing title"
+    //let emailaddress=member.email ? member.email : "Missing email provided"
+    //let membertitle = member.title ? member.title : "Missing title"
     return ( 
         <div className={`member ${member.active && 'active'}`}
-        //onDoubleCllick={() => onToggle(member.id)}
+        onDoubleClick={() => onToggle(member.id)}
         >
           <h3>
             {member.name}{' '}
