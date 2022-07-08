@@ -6,3 +6,5 @@ fe/node_modules/*
 be/node_modules/*
 fe/db.json
 fe/cache/*
+be/package-lock.json
+be/artifacts/*

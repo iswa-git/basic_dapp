@@ -4,8 +4,8 @@ import { FaTimes } from 'react-icons/fa'
 
 const Member = ({member, onDelete, onToggle}) => {
     let tokenaddress=member.netad ? member.netad : "Missing token address"
-    //let emailaddress=member.email ? member.email : "Missing email provided"
-    //let membertitle = member.title ? member.title : "Missing title"
+    let emailaddress=member.email ? member.email : "Missing email provided"
+    let membertitle = member.title ? member.title : "Missing title"
     return ( 
         <div className={`member ${member.active && 'active'}`}
         onDoubleClick={() => onToggle(member.id)}
@@ -18,9 +18,9 @@ const Member = ({member, onDelete, onToggle}) => {
               onClick={() => onDelete(member.id)}
             /> }
           </h3>
-          <p>{/*membertitle*/}</p>
+          <p>{membertitle}</p>
           <p>{tokenaddress}</p>
-          <p>{/*emailaddress*/}</p>
+          <p>{emailaddress}</p>
         </div>
       )
     }

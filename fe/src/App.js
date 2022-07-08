@@ -51,7 +51,7 @@ const App = () => {
 
 // Delete Member
 const deleteMember = async (id) => {
-  const res = await fetch (`http://localhost :5000/team/${id}`, {
+  const res = await fetch (`http://localhost:5000/team/${id}`, {
     method: 'DELETE',
   })
   console.log(res)

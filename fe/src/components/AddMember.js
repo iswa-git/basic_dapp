@@ -40,7 +40,7 @@ const AddMember = ( { onAdd}) => {
         </div>
 
 
-        {/* <div className='form-control'>
+        <div className='form-control'>
             <label>Title</label>
             <input type='text' placeholder='Add Title' value={title} onChange={(e) => setTitle(e.target.value)}/>
         </div>
@@ -48,7 +48,7 @@ const AddMember = ( { onAdd}) => {
         <div className='form-control'>
             <label>Email Address</label>
             <input type='text' placeholder='Add Email Address' value={email} onChange={(e) => setEmail(e.target.value)}/>
-        </div> */}
+        </div>
 
         <div className='form-control'>
             <label>Token Address</label>
