@@ -9,16 +9,29 @@ import Members from './components/tm';
 import AddMember from './components/AddMember'
 import EthTransfer from './components/EthTransfer';
 
+const jsondataurl = 'http://localhost:5000/team/';
+
 const App = () => {
   const [ showAddMember, setShowAddMember] = useState (false)
+
+  const [ showEthTransfer, setShowEthTransfer] = useState(false)
   
   const [ members, setMember ] = useState ([])
+  
+  const [from, setFrom ] = useState('')
+  
+  const [to, setTo ] = useState ('')
 
   const handleClickTransfer = (e) => {
     console.log (e)
   }
 
   useEffect (()=> {
+    //onPlus
+    const onPlusInAppjs = async (id) => {
+      console.log('send ', id);
+    }
+
     const getMembers = async () => {
       // eslint-disable-next-line 
       const membersFromServer = await fetchMembers()
@@ -51,7 +64,7 @@ const App = () => {
 
 // Delete Member
 const deleteMember = async (id) => {
-  const res = await fetch (`http://localhost:5000/team/${id}`, {
+  const res = await fetch (`jsondataurl${id}`, {
     method: 'DELETE',
   })
   console.log(res)
@@ -60,16 +73,15 @@ const deleteMember = async (id) => {
    res.status === 200
    ?  setMember (members.filter((member) => member.id !== id))
    : alert('Error Deleting This Record')
-
 }
     return (
       <div className="container">
         <Header onAdd={() => setShowAddMember(!showAddMember)} showAdd={showAddMember} title="Dev Team" />
         {showAddMember && <AddMember onAdd={addMember}/>}
         {members.length > 0 ? (
-          <Members members={members} onDelete={deleteMember}/>
-        ) : ( 'Nothing to show')}
-       <EthTransfer onTransfer={handleClickTransfer}/>
+          <Members members={members} onDelete={deleteMember} onPlus={onPlusInAppjs} />
+        ) : ( 'Nothing to show')} 
+        <EthTransfer onTransfer={() => handleClickTransfer (!showEthTransfer)}  />
       </div>
     );
 };
