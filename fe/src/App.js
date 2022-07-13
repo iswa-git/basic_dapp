@@ -9,7 +9,7 @@ import Members from './components/tm';
 import AddMember from './components/AddMember'
 import EthTransfer from './components/EthTransfer';
 
-const jsondataurl = 'http://localhost:5000/team/';
+const jsondataurl = "http://localhost:5000/team/";
 
 const App = () => {
   const [ showAddMember, setShowAddMember] = useState (false)
@@ -19,19 +19,17 @@ const App = () => {
   const [ members, setMember ] = useState ([])
   
   const [from, setFrom ] = useState('')
-  
   const [to, setTo ] = useState ('')
+  const [amount, setAmount ] = useState('')
+  const [fromIcon, setFromIcon] = useState(true)
+  const [toIcon, setToIcon] = useState(true)
 
   const handleClickTransfer = (e) => {
     console.log (e)
   }
 
   useEffect (()=> {
-    //onPlus
-    const onPlusInAppjs = async (id) => {
-      console.log('send ', id);
-    }
-
+  
     const getMembers = async () => {
       // eslint-disable-next-line 
       const membersFromServer = await fetchMembers()
@@ -39,10 +37,29 @@ const App = () => {
     }
     getMembers()
   }, [])
+    //onChangeAmound
+    const onChangeAmount = (e) =>{
+      console.log (e)
+    }
+
+    //onPlus
+    const onToAddress = (netad) => {
+      setTo(netad)
+      
+      //setToIcon=false
+      //console.log(netad)
+    }
+   
+    //onMinus
+    const onFromAddress = (netad) => {
+      setFrom(netad)
+      //console.log(netad)
+    }
 
   // Fetch Members
   const fetchMembers = async () => {
-    const res = await fetch('http://localhost:5000/team/')
+    const res = await fetch(`${jsondataurl}`)
+    //const res = await fetch('http://localhost:5000/team/')
     const data = await res.json()
 
     return data
@@ -50,7 +67,7 @@ const App = () => {
 
   // Add  Member
   const addMember = async (member) => {
-    const res = await fetch('http://localhost:5000/team/', {
+    const res = await fetch(`${jsondataurl}`, {
       method: 'POST',
       headers: {
         'Content-type':'application/json'
@@ -64,10 +81,10 @@ const App = () => {
 
 // Delete Member
 const deleteMember = async (id) => {
-  const res = await fetch (`jsondataurl${id}`, {
+    const res = await fetch (`${jsondataurl}${id}`, {
     method: 'DELETE',
   })
-  console.log(res)
+  //console.log(res)
 
    //We should control the response status to decide if we will change the state or not.
    res.status === 200
@@ -79,9 +96,9 @@ const deleteMember = async (id) => {
         <Header onAdd={() => setShowAddMember(!showAddMember)} showAdd={showAddMember} title="Dev Team" />
         {showAddMember && <AddMember onAdd={addMember}/>}
         {members.length > 0 ? (
-          <Members members={members} onDelete={deleteMember} onPlus={onPlusInAppjs} />
+          <Members members={members} onDelete={deleteMember} onPlus={onToAddress} onMinus={onFromAddress} />
         ) : ( 'Nothing to show')} 
-        <EthTransfer onTransfer={() => handleClickTransfer (!showEthTransfer)}  />
+        <EthTransfer To={to} From={from} Amount={amount} onChangeAmount={(e)=>onChangeAmount} onTransfer={(e) => handleClickTransfer (e)}  />
       </div>
     );
 };

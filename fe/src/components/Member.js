@@ -2,8 +2,7 @@ import React from "react";
 
 import { FaTimes, FaUserMinus, FaUserPlus } from "react-icons/fa";
 
-const Member = ({ member, onDelete, onToggle, onPlus }) => {
-
+const Member = ({ member, onDelete, onToggle, onPlus, onMinus }) => {
   let tokenaddress = member.netad ? member.netad : "Missing token address";
   let emailaddress = member.email ? member.email : "Missing email provided";
   let membertitle = member.title ? member.title : "Missing title";
@@ -15,19 +14,26 @@ const Member = ({ member, onDelete, onToggle, onPlus }) => {
     >
       <h3>
         {member.name}{" "}
-        {<FaUserMinus style={{ color: "red", cursor: "pointer" }} />}
+        {
+          <FaUserMinus
+            classNamme={`sendfrom`}
+            style={{ color: "red", cursor: "pointer" }}
+            onClick={() => onMinus(member.netad)}
+          />
+        }
         {
           <FaUserPlus
+            className={`sendto`}
             style={{ color: "green", curson: "pointer" }}
             onClick={() => onPlus(member.netad)}
           />
         }
-        {
+        {/*
           <FaTimes
             style={{ color: "green", cursor: "pointer" }}
             onClick={() => onDelete(member.id)}
           />
-        }
+        */}
       </h3>
       <p>{membertitle}</p>
       <p>{tokenaddress}</p>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const EthTransfers = ({ From, To, OnTransfer }) => { 
+const EthTransfer = ({ From, To, Amount, OnTransfer, onChangeAmount }) => { 
 
         const [from, setFrom] = useState('');
         const [to, setTo] = useState('');
@@ -26,17 +26,17 @@ const EthTransfers = ({ From, To, OnTransfer }) => {
         <form className='add-form' onSubmit={OnTransfer}>
             <div className='form-control'>
                 <label>From Address</label>
-                <input type='text' placeholder='Add the FROM address' value={ from } />
+                <input id='from' type='text' placeholder='Add the FROM address' value={ From } />
             </div>
                
             <div className='form-control'>
                 <label>To Address</label>
-                <input type='text' placeholder='Add the To address' value={ to } />
+                <input id='to' type='text' placeholder='Add the To address' value={ To } />
             </div>
 
             <div className='form-control'>
                 <label>Value</label>
-                <input type='text' placeholder='Add the To address' value={ amount } />
+                <input id='amount' type='number' placeholder='Add the Amount to be transfered' value={ Amount } onChange={onChangeAmount} />
             </div>
     
             <input type='submit' value='Send' className='btn btn-block' />
@@ -45,4 +45,4 @@ const EthTransfers = ({ From, To, OnTransfer }) => {
     );
 }
  
-export default EthTransfers;
+export default EthTransfer;

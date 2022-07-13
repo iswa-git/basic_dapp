@@ -16,12 +16,16 @@ const AddMember = ( { onAdd}) => {
             return
         }
 
-        if (netad.length >0 ){
+        //f (netad.length >0 ){
+            if (netad.length == 0 ){
+                alert ('Token address is required field!')
+                return
+            }
             if (netad.length !== 42){
                 alert ('Token length should be 42, please check it!')
                 return
             }
-        }
+        //}
 
         onAdd( {name, title, email, netad })
 

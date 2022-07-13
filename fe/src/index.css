@@ -68,8 +68,16 @@ body {
 
 .member h3 {
   display: flex;
+  align-items: flex-start;
   align-items: center;
   justify-content: space-between;
+}
+
+.sendto{
+  align-items: flex-end;
+}
+.sendfrom{
+  align-items: flex-end;
 }
 
 .add-form {
